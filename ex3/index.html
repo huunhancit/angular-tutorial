@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title> Demo app 2</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app='App2'>
+	<div ng-controller='App2Ctr as ctr'>
+		<div ng-if='myData.show'>
+			{{ myData.printText() }}
+			<p> Use ng-bind: </p>
+			<span ng-bind="myData.printText()"></span>
+			<p>Use ng-bind-hmtl-unsafe: </p>
+			<span ng-bind="myData.printText()"></span>
+		</div>
+		<button ng-click='myData.clickShowHide(myData.show)'>Show/Hide</button>
+
+		<p>Demo ng-switch</p>
+		<div ng-switch on='myData.switchData'>
+			<div ng-switch-when="1">Hello 1</div>
+			<div ng-switch-when='2'>Hello 2</div>
+			<div ng-switch-when='3'>Hello 3</div>
+		</div>
+		<select ng-model='myData.switchData' ng-options='data for data in datas' ng-change='myData.changeData(myData.switchData)'>
+		</select>
+		<p>List object with ng-repeat</p>
+		<ol>
+			<li ng-repeat='object in listObject'>Name: {{object.name}} - Age: {{object.age}}</li>
+		</ol>
+		<p>  Filter with ng-repeat </p>
+		<p>List object alter filter age > 22 and age < 26 </p>
+		<ol>
+			<li ng-repeat='object in listObject | filter: filterList'>
+				Name: {{object.name}} -- Age: {{ object.age }}
+			</li>
+		</ol>
+		<p>Orderby : </p>
+		<ol>
+			<li ng-repeat="item in myData.items | orderBy:sortField:reverse">
+				{{item.text}} : {{$first}}, {{$middle}}, {{$last}}
+			</li>
+		</ol>
+		<p>Filter custom </p>
+		<b>Custom myFilter</b>
+		<ol>
+			<li ng-repeat='item in myData.items'>
+				{{item.text | myFilter }}
+			</li>
+		</ol>
+		
+		<b>Custom filter1</b>
+		<ol>
+			<li ng-repeat='item in myData.items'>
+				{{item.text | filter1:2:3 }}
+			</li>
+		</ol>
+	
+		<p>Search with filer 2 </p>
+		<input type="text" name="text" ng-model="key"/>
+		<ol>
+			<li ng-repeat='item in myData.items | filter2:key'>
+				{{item.text}}
+			</li>
+		</ol>
+	</div>
+	
+	<script type="text/javascript" src="controller/controller.js"></script>
+	<script type="text/javascript" src="filter/filterCustom.js"></script>
+</body>
+</html>
