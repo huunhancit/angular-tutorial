@@ -6,7 +6,14 @@
 
 <body ng-app='App3'>
 	<div ng-controller='App3Ctr'>
-	
+		<button ng-click='data.clickButton()'>My Click 1</button>
+		<button ng-click='click2($event)'>My Click 2</button>
+		<ul>
+			<li ng-repeat='version in data.versions'>
+				Version: {{version.nameVersion}}  ----- 
+				<button ng-click='click3(version,$event)'>Show version</button>
+			</li>
+		</ul>
 	</div>
 	<script src="controller/controller.js"></script>
 </body>
