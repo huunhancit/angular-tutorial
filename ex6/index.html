@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Demo App 6</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app='App6'>
+	<div ng-controller='app6Ctr'>
+		<table>
+			<tr>	
+				<td>
+					<input type="checkbox" ng-model="disableButton"/>Disable Button Click
+				</td>
+				<td>
+					<input type="button" ng-disabled="disableButton" value="Click" ng-click="showAlert()"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" ng-model="hideButton"/> Hide Button
+				</td>
+				<td>
+					<input type="button" ng-hide="hideButton" value="Click"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" ng-model="showButton" ng-init="showButton = false"/> Show Button
+				</td>
+				<td>
+					<input type="button" ng-show="showButton" value="Click"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" value="Click" ng-click="clickTotal()"/>
+				</td>
+				<td>
+					{{total}}
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script src="app.js"></script>
+	<script src="controller/app6Ctr.js"></script>
+</body>
+</html>
