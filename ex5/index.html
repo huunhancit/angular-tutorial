@@ -1,0 +1,55 @@
+<html>
+<head>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css"  href="css/main.css" >
+	<title>Demo App 5</title>
+</head>
+<body ng-app='App5'>
+	<div ng-controller='app5Ctr'>
+		<h2>Table Angular JS Example</h3>
+		<table border=0>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" ng-model="student.firstName"/> </td>
+			</tr>
+			<tr>
+				<td>
+					Last Name:
+				</td>
+				<td>
+					<input type="text" ng-model="student.lastName"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Full Name:
+				</td>
+				<td>
+					{{student.fullName()}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Subject: 
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td>Name</td>
+							<td>Marks</td>
+						</tr>
+						<tr ng-repeat='subject in student.subjects'>
+							<td>{{subject.name}}</td>
+							<td>{{subject.marks}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+	<script src="app.js"></script>
+	<script src="controller/app5Ctr.js"></script>
+</body>
+</html>
