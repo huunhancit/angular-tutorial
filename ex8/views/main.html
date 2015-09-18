@@ -1,0 +1,26 @@
+<table border="0">
+	<tr>
+		<td>
+			Enter first name:
+		</td>
+		<td>
+			<input type="text" name="firstname" ng-model="student.firstName"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Enter last name:
+		</td>
+		<td>
+			<input type="text" name="lastname" ng-model="student.lastName"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Full name:
+		</td>
+		<td>
+			{{ student.fullName() }}
+		</td>
+	</tr>
+</table>
