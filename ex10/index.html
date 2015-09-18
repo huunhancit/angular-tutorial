@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Demo app 10 </title>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/components-font-awesome/css/font-awesome.css">
+</head>
+
+<body ng-app="App10">
+	<div ng-controller="app10Ctr">
+		<!-- header -->
+		<header>
+			<nav class="nabar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="#/" class="navbar-brand">Angular Js Route Example</a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                </ul>
+				</div>
+			</nav>
+		</header>
+		<!-- main content -->
+		{{message}}
+		<div id="main">
+			<div ng-view></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="controller/app10Ctr.js"></script>
+	<script type="text/javascript" src="pages/about/about.js"></script>
+	<script type="text/javascript" src="pages/home/home.js"></script>
+	<script type="text/javascript" src="pages/contact/contact.js"></script>
+</body>
+</html>
