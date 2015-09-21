@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Demo app 12</title>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app='App12'>
+	<div ng-controller='App12Ctr'>
+		Rating is {{rating}} <br/>
+	  	Clickable Rating <br/>
+	  	<div star rating-value="rating" max="10" on-rating-selected="saveRatingToServer(rating)"></div>
+	  	<br/>
+	 	 Readonly rating <br/>
+	  	<div star rating-value="rating" max="10" readonly="true"></div>
+	</div>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="controllers/app12.controller.js"></script>
+	<script type="text/javascript" src="directives/app.directive.js"></script>
+</body>
+</html>
